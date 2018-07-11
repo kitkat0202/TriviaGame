@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css?family=Julee|Princess+Sofia');
+
+:root {
+    --trans: all 300ms ease-in-out;
+
+    --timer: 'Princess Sofia', cursive;
+    --questions: 'Julee', cursive;
+}
+
+
+body, html {
+    height: 100vh;
+    overflow: hidden;
+    background-image: url("../images/bg1a.JPG");
+    background-size: contain;
+    background-color: #000;
+    font-family: var(--questions);
+}
+
+.container {
+    height: 100%;
+}
+
+#timer {
+    padding: 20px 50px;
+    position: absolute;
+    font-family: var(--timer);
+    color: #fff;
+    font-size: 40px;
+}
+
+#score h4 {
+    color: #aaa;
+    font-family: var(--questions);
+}
+
+.card {
+    height: 70%;
+    box-shadow: 30px 30px 50px 0px #000000bd;
+    background-color: #ffffff00;
+    margin-top: -15px;
+}
+
+.card-img {
+    height: 100%;
+    opacity: .35;
+}
+
+.card-img-overlay {
+    box-shadow: inset 0px 0px 30px 10px #000000ab;
+}
+
+.round {
+    border-radius: 10px;
+}
+
+.img-head {
+    height: 30%;
+    margin: -15px 30%;
+}
+
+.card-question {
+    /* padding: 0px 20px 30px 20px; */
+    height: 100px;
+    
+}
+
+.card-question h1 {
+    letter-spacing: 3px;
+    font-size: 35px;
+    text-shadow: 5px 5px 20px #000000,
+                -5px -5px 20px #000000;
+}
+
+.choice {
+    width: 80%;
+    height: 60px;
+    padding: 10px;
+    margin: 20px auto;
+    box-shadow: inset 0px 0px 10px 0px #aaa;
+    font-size: 20px;
+    background-color: #4e4631c7;
+    transition: var(--trans);
+}
+
+.choice:hover {
+    cursor:pointer;
+    background-color: #aaaaaa7a;
+    box-shadow: inset 0px 0px 0px 0px #ffffffc7,
+                0px 0px 10px 0px #000000c7;
+}
+
+.message {
+    width: 500px;
+    height: 240px;
+    margin-top: -100px;
+    margin-left: -250px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-image: url(../images/unnamed2.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: .8;
+    
+}
+
+.message h1 {
+    text-align: center;
+    font-size: 90px;
+    line-height: 250px;
+    color: #b11b1b;
+    text-shadow: 0px 0px 30px #ffffff;
+    opacity: 1;
+}
+
+.final-score {
+    padding-top: 100px;
+}
+
+.final-score h1{
+    text-align: center;
+    font-size: 80px;
+    line-height: 120px;
+    text-shadow: 0px 0px 30px #000000;
+}
+
+.disappear {
+    display: none;
+}

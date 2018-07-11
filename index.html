@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trivia Game</title>
+    <link rel="stylesheet" href="assets/css/reset.css">
+    <link href="https://fonts.googleapis.com/css?family=Julee|Princess+Sofia" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <div id="timer">00:<span class="time">20</span>
+        <div id="score">
+            <h4>Win: <span id="win-score">0</span></h4>
+            <h4>Lose: <span id="lose-score">0</span></h4>
+        </div>
+    </div>
+    <div class="container">
+        <img src="assets/images/Diablo_III_Head.png" alt="Header" class="img-fluid img-head">
+
+        <div class="card text-white">
+            <img class="card-img" src="assets/images/unnamed4.jpg" alt="Card image">
+
+
+            <!-- QUESTIONS PAGE -->
+            <div id="multi-choice" class="card-img-overlay">
+                <div class="card-question">
+                    <h1 id="question" class="text-center"></h1>
+                </div>
+                <div class="choice" id="choice-0" value="0"></div>
+                <div class="choice" id="choice-1" value="1"></div>
+                <div class="choice" id="choice-2" value="2"></div>
+                <div class="choice" id="choice-3" value="3"></div>
+            </div>
+
+            <!-- FINAL SCORE PAGE -->
+            <div class="card-img-overlay final-score disappear">
+                <h1>Win: <span id="final-win">0</span></h1>
+                <h1>Lose: <span id="final-lose">0</span></h1>
+            </div>
+        </div>
+
+        <div class="message disappear" id="win"><h1>You Win!</h1></div>
+        <div class="message disappear" id="lose"><h1>You Lose..</h1></div>
+        <div class="message disappear" id="time-up"><h1>Time's Up</h1></div>
+
+    </div>
+    
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="assets/javascript/app.js"></script>
+
+</body>
+</html>
