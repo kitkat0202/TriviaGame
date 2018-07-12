@@ -82,6 +82,7 @@ body, html {
     font-size: 20px;
     background-color: #4e4631c7;
     transition: var(--trans);
+    letter-spacing: 1px;
 }
 
 .choice:hover {
@@ -117,6 +118,7 @@ body, html {
 
 .final-score {
     padding-top: 100px;
+    position: absolute;
 }
 
 .final-score h1{
@@ -124,6 +126,32 @@ body, html {
     font-size: 80px;
     line-height: 120px;
     text-shadow: 0px 0px 30px #000000;
+}
+
+#restart {
+    width: 200px;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    margin-left: -100px;
+    font-size: 30px;
+    line-height: 50px;
+    border-radius: 5px;
+    background-color: #7e730f;
+    border: none;
+    transition: var(--trans);
+    text-align: center;
+    color: #fff;
+}
+
+#restart:hover {
+    box-shadow: 2px 2px 10px #111;
+    text-decoration: none;
+
+}
+
+#restart:active {
+    box-shadow: inset 2px 2px 10px #111;
 }
 
 .disappear {

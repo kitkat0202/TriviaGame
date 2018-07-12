@@ -78,11 +78,25 @@ $(function() {
     // after all teh questions
     let gameEnd = () => {
         clearInterval(intervalValid);
-        $("#timer").addClass("disappear")
-        $("#multi-choice").addClass("disappear")
+        $("#timer, #multi-choice").addClass("disappear")
         $("#final-win").html(winScore)
         $("#final-lose").html(loseScore)
         $(".final-score").removeClass("disappear")
+    }
+
+    let restart = () => {
+        countQuestion = 0
+        winScore = 0
+        loseScore = 0
+        countDownOn = false
+        chosenTrue = false
+
+        $("#win-score").html(winScore)
+        $("#lose-score").html(loseScore)
+        $(".final-score").addClass("disappear")
+        questionInDiv()
+        $("#timer, #multi-choice").removeClass("disappear")
+        countDownClock()
     }
 
     //timer
@@ -131,7 +145,6 @@ $(function() {
         if (countQuestion === triviaQuestions.length) {
             gameEnd()
         } else {
-            // $("#time-up").addClass("disappear")
             chosenTrue = false
             countDownOn = false
             questionInDiv()
@@ -169,10 +182,7 @@ $(function() {
         startBtn()
     })
 
-    
-
-
-
-
-    
+    $("#restart").on("click", function() {
+        restart()
+    })
 })
