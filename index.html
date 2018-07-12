@@ -13,16 +13,19 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-    <div id="timer">00:<span class="time">20</span>
+    <div id="timer" class="disappear">00:<span class="time">20</span>
         <div id="score">
             <h4>Win: <span id="win-score">0</span></h4>
             <h4>Lose: <span id="lose-score">0</span></h4>
         </div>
     </div>
     <div class="container">
-        <img src="assets/images/Diablo_III_Head.png" alt="Header" class="img-fluid img-head">
+        <div class="start-pg">
+            <p>Click to Start</p>
+            <img src="assets/images/Diablo_III_Head.png" class="start-btn">
+        </div>
 
-        <div class="card text-white">
+        <div id="question-pg" class="card text-white disappear">
             <img class="card-img" src="assets/images/unnamed4.jpg" alt="Card image">
 
 
@@ -47,6 +50,7 @@
         <div class="message disappear" id="win"><h1>You Win!</h1></div>
         <div class="message disappear" id="lose"><h1>You Lose..</h1></div>
         <div class="message disappear" id="time-up"><h1>Time's Up</h1></div>
+        
 
     </div>
     

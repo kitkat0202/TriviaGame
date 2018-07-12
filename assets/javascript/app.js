@@ -37,6 +37,8 @@ $(function() {
     let countDownOn = false
     let timer // seconds
 
+    let audio = new Audio("assets/sound/DIII_sound.mp3")
+
     //get the question
     let chooseQuestion = () => {
         currentArray = triviaQuestions[countQuestion]
@@ -90,20 +92,15 @@ $(function() {
             intervalValid = setInterval(() => {
                 countDownOn = true
                 timer -= 1
-                if (countQuestion === triviaQuestions.length) {
-                    gameEnd()
-                } else if (timer >= 0) {
+                if (timer >= 0) {
                     timer < 10 ? $(".time").html(`0${timer}`) : $(".time").html(timer)
                 } else {
                     loseScore += 1
-                    $("#time-up").removeClass("disappear")
+                    // $("#time-up").removeClass("disappear")
                     $("#lose-score").html(loseScore)
                     clearInterval(intervalValid);
                     setTimeout(() => {
-                        countDownOn = false
-                        questionInDiv()
-                        countDownClock()
-                        $("#time-up").addClass("disappear")
+                        checkGameEnd()
                     }, 500);
                 }
             }, 1000)
@@ -111,9 +108,37 @@ $(function() {
         }
     }
 
-    //someting wrong with the last question
-    // make a start button (the diablo sign) (on click shrink to become the heading)
-    // do i need a restart button?
+
+    let startBtn = () => {
+        audio.play()
+        questionInDiv()
+        $(".start-pg p").addClass("disappear")
+        $(".start-pg").animate({
+            opacity: 1,
+            top: "10px",
+            height: "30%",
+            width: "400px",
+            "margin-top": "-20px"
+        }, 3000, function() {
+            // Animation complete.
+            $("#question-pg, #timer").removeClass("disappear")
+            countDownClock()
+            });
+
+    }
+
+    let checkGameEnd = () => {
+        if (countQuestion === triviaQuestions.length) {
+            gameEnd()
+        } else {
+            // $("#time-up").addClass("disappear")
+            chosenTrue = false
+            countDownOn = false
+            questionInDiv()
+            clearInterval(intervalValid);
+            countDownClock()
+        }
+    }
 
 
 
@@ -122,37 +147,30 @@ $(function() {
     $(".choice").on("click", function() {
         if (!chosenTrue) {
             let theChosenOne = parseInt($(this).attr("value"))
-            if (countQuestion === triviaQuestions.length) {
-                gameEnd()
+            if (theChosenOne === currentRightLocation) {
+                chosenTrue = true
+                winScore += 1
+                $("#win").removeClass("disappear")
+                $("#win-score").html(winScore)
             } else {
-                if (theChosenOne === currentRightLocation) {
-                    chosenTrue = true
-                    winScore += 1
-                    $("#win").removeClass("disappear")
-                    $("#win-score").html(winScore)
-                } else {
-                    chosenTrue = true
-                    loseScore += 1
-                    $("#lose").removeClass("disappear")
-                    $("#lose-score").html(loseScore)
-                }
-                setTimeout(() => {
-                    $("#lose, #win").addClass("disappear")
-                    questionInDiv()
-                    chosenTrue = false
-                    countDownClock()
-                }, 500);
+                chosenTrue = true
+                loseScore += 1
+                $("#lose").removeClass("disappear")
+                $("#lose-score").html(loseScore)
             }
+            setTimeout(() => {
+                $("#lose, #win").addClass("disappear")
+                checkGameEnd()
+            }, 500);
         }
     })
 
+    $(".start-pg").on("click", function() {
+        startBtn()
+    })
 
+    
 
-
-    // need to run in beginning
-    questionInDiv()
-    console.log(currentRightLocation);
-    countDownClock()
 
 
 
