@@ -110,16 +110,21 @@ $(function() {
                     timer < 10 ? $(".time").html(`0${timer}`) : $(".time").html(timer)
                 } else {
                     loseScore += 1
-                    // $("#time-up").removeClass("disappear")
+                    msgCreater("Time is Up", currentAnswers[currentRightLocation])/////////////////////////////
                     $("#lose-score").html(loseScore)
                     clearInterval(intervalValid);
                     setTimeout(() => {
                         checkGameEnd()
-                    }, 500);
+                    }, 800);
                 }
             }, 1000)
             countDownOn = true
         }
+    }
+
+    let msgCreater = (message, answer= "") => {
+        $(".message").html($(`<h1>${message}</h1><p>${answer}</p>`))
+        $(".message").removeClass("disappear")
     }
 
 
@@ -142,6 +147,7 @@ $(function() {
     }
 
     let checkGameEnd = () => {
+        $(".message").addClass("disappear")
         if (countQuestion === triviaQuestions.length) {
             gameEnd()
         } else {
@@ -163,18 +169,18 @@ $(function() {
             if (theChosenOne === currentRightLocation) {
                 chosenTrue = true
                 winScore += 1
-                $("#win").removeClass("disappear")
+                msgCreater("You Win")
                 $("#win-score").html(winScore)
             } else {
                 chosenTrue = true
                 loseScore += 1
-                $("#lose").removeClass("disappear")
+                msgCreater("You Lose...", currentAnswers[currentRightLocation])
                 $("#lose-score").html(loseScore)
             }
             setTimeout(() => {
-                $("#lose, #win").addClass("disappear")
+                //$("#lose, #win").addClass("disappear")
                 checkGameEnd()
-            }, 500);
+            }, 800);
         }
     })
 
