@@ -136,8 +136,8 @@ $(function() {
             opacity: 1,
             top: "10px",
             height: "30%",
-            width: "400px",
-            "margin-top": "-20px"
+            width: "40%",
+            "margin-top": "-30px"
         }, 3000, function() {
             // Animation complete.
             $("#question-pg, #timer").removeClass("disappear")

@@ -37,6 +37,7 @@ body, html {
 
 .card {
     height: 70%;
+    min-height: 445px;
     box-shadow: 30px 30px 50px 0px #000000bd;
     background-color: #ffffff00;
     margin-top: -15px;
@@ -60,10 +61,8 @@ body, html {
     margin: -15px 30%;
 }
 
-.card-question {
-    /* padding: 0px 20px 30px 20px; */
-    height: 100px;
-    
+#multi-choice {
+    overflow: auto;
 }
 
 .card-question h1 {
@@ -75,9 +74,9 @@ body, html {
 
 .choice {
     width: 80%;
-    height: 60px;
-    padding: 10px;
-    margin: 20px auto;
+    /* height: 60px; */
+    padding: 8px 15px;
+    margin: 15px auto;
     box-shadow: inset 0px 0px 10px 0px #aaa;
     font-size: 20px;
     background-color: #4e4631c7;
@@ -98,7 +97,7 @@ body, html {
     margin-top: -100px;
     margin-left: -250px;
     position: absolute;
-    top: 50%;
+    top: 35%;
     left: 50%;
     background-image: url(../images/unnamed2.png);
     background-size: contain;
@@ -112,7 +111,7 @@ body, html {
     font-size: 90px;
     line-height: 150px;
     color: #b11b1b;
-    text-shadow: 0px 0px 30px #ffffff;
+    text-shadow: 0px 0px 2px #000000;
     opacity: 1;
 }
 
@@ -172,6 +171,7 @@ body, html {
 
 .start-pg {
     width: 100%;
+    min-width: 220px;
     height: 600px;
     opacity: .7;
     margin: 0 auto;
@@ -191,4 +191,94 @@ body, html {
     color: #fff;
     margin-bottom: -100px;
     position: absolute;
+}
+
+@media (max-width: 768px) {
+    #timer {
+        padding: 10px 20px;
+        font-size: 25px;
+    }
+
+    #score h4 {
+        font-size: 18px;
+    }
+
+    .card {
+        height: 70%;
+        min-height: 325px;
+    }
+
+    .card-question {
+        height: auto;
+    }
+
+    .card-question h1 {
+        letter-spacing: 1px;
+        font-size: 25px;
+    }
+
+    .choice {
+        height: auto;
+        padding: 5px 15px;
+        margin: 15px auto;
+        font-size: 18px;
+        letter-spacing: .5px;
+    }
+}
+
+@media (max-width: 576px) {
+    .width-adjuster {
+        margin-bottom: -10px;
+    }
+
+    .message {
+        width: 400px;
+        height: 192px;
+        margin-top: -96px;
+        margin-left: -200px;
+    }
+
+    .message h1 {
+        font-size: 85px;
+    }
+}
+
+@media (max-width: 425px) {
+    .width-adjuster {
+        margin-top: 10px;
+    }
+
+    .card-img-overlay {
+        padding: 20px 10px;
+    }
+
+    .card-question h1 {
+        letter-spacing: .5px;
+        font-size: 22px;
+    }
+
+    .choice {
+        height: auto;
+        padding: 5px 15px;
+        margin: 15px auto;
+        font-size: 15px;
+        letter-spacing: .5px;
+    }
+
+    .message {
+        width: 300px;
+        height: 144px;
+        margin-top: -72px;
+        margin-left: -150px;
+        padding: 10px;
+    }
+
+    .message h1 {
+        font-size: 75px;
+        line-height: 120px;
+    }
+}
+
+@media (max-width: 380px) {
+
 }
