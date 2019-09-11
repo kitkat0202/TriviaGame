@@ -35,7 +35,7 @@ $(function() {
 
     let intervalValid
     let countDownOn = false
-    let timer = 50 // seconds
+    let timer = 20 // seconds
 
     let audio = new Audio("assets/sound/DIII_sound.mp3")
 
