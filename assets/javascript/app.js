@@ -35,7 +35,7 @@ $(function() {
 
     let intervalValid
     let countDownOn = false
-    let timer // seconds
+    let timer = 50 // seconds
 
     let audio = new Audio("assets/sound/DIII_sound.mp3")
 
@@ -101,7 +101,6 @@ $(function() {
 
     //timer
     let countDownClock = () => {
-        timer = 20
         if (!countDownOn) {
             intervalValid = setInterval(() => {
                 countDownOn = true
